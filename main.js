@@ -18,6 +18,8 @@ const torusKnot = new THREE.Mesh( geo, material ); scene.add( torusKnot );
 const geo2 = new THREE.CapsuleGeometry( 2, 4, 4, 100 ); 
 const capsule = new THREE.Mesh( geo2, material ); scene.add( capsule );
 
+scene.background = new THREE.Color();
+
 torusKnot.position.z = 120
 capsule.position.z = 240
 
@@ -25,8 +27,8 @@ capsule.position.z = 240
 function animate() {
     camera.position.z = window.scrollY / 10;
 	renderer.render( scene, camera );
-    torusKnot.rotation.y += 0.01
-    torusKnot.rotation.x += 0.01
+    torusKnot.rotation.y += 0.005
+    torusKnot.rotation.x += 0.005
     torus.rotation.x = window.scrollY / 500
     capsule.rotation.z = window.scrollY / 400
     capsule.rotation.y = window.scrollY / 400
